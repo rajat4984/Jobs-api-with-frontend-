@@ -28,6 +28,22 @@ const createJob = async (event) => {
   getAllJobs();
 };
 
+const deleteJob = (event) => {
+  console.log(event);
+  // const response = await fetch("/api/v1/jobs", {
+  //     method: "DELETE",
+
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //       Authorization:
+  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ1NDAyNjEzZWIxZmFjMDQ5MGJmYjQiLCJuYW1lIjoicmFqYXQiLCJpYXQiOjE2NTgyMjc3NzMsImV4cCI6MTY2MDgxOTc3M30.MsrPZp0Pce9TXznQCv8c0wvoKJvrXyjrdbx-s-Tic_o",
+  //     },
+  //     parms:{
+
+  //     }
+  //   });
+};
+
 const getAllJobs = async () => {
   const response = await fetch("/api/v1/jobs", {
     method: "GET",
@@ -57,21 +73,6 @@ const getAllJobs = async () => {
   });
 };
 
-const deleteJob = (e) => {
-  console.log(e.target);
-  // const response = await fetch("/api/v1/jobs", {
-  //     method: "DELETE",
-
-  //     headers: {
-  //       "Content-type": "application/json; charset=UTF-8",
-  //       Authorization:
-  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ1NDAyNjEzZWIxZmFjMDQ5MGJmYjQiLCJuYW1lIjoicmFqYXQiLCJpYXQiOjE2NTgyMjc3NzMsImV4cCI6MTY2MDgxOTc3M30.MsrPZp0Pce9TXznQCv8c0wvoKJvrXyjrdbx-s-Tic_o",
-  //     },
-  //     parms:{
-
-  //     }
-  //   });
-};
 
 submitInput.addEventListener("click", createJob);
 // deleteBtn.addEventListener("click", deleteJob);
