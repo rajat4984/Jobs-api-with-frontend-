@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --mypink: #fefbf6;
+  --mylightblue: #a6d1e6;
+  --mypurple: #7f5283;
+  --mydarkgrey: #3d3c42;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--mypink);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  padding: 3% 2%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--mypurple);
+  color: var(--mypink);
+}
+
+.nav-links > li{
+    margin-left: 0.7em;
+    font-size: 1.1rem;
+}
+
+li > a {
+  color: var(--mypink);
+}
+
+
+.form-info{
+    display: flex;
+    justify-content: flex-start;
+    margin: 2em 0 0 2em;
+}
+
+input[type=text], select {
+    width: 150%;
+    padding: 12px;
+    border :1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+#submit-input{
+    outline: none;
+    font-size: 1rem;
+    padding: 2.5% 5.5%;
+    border: none;
+    background-color: var(--mypurple);
+    color: var(--mypink);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    border: 1px solid var(--mypink);
+  }
+
+  .submit-input:hover{
+    background-color: var(--mypink);
+    color: var(--mypurple);
+    border: 1px solid var(--mypurple);
+  }
+
+/* ---------card-container-------- */
+
+.cards-container{
+    margin: 4em 2em 2em 2em;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.card{
+    color: rgb(15, 15, 15);
+    background-color: rgb(238, 238, 238);
+    padding: 1em;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-contents > h3,p,p{
+    padding-bottom: 1em;
+}
+
+.delete-btn,.edit-btn{
+    padding: .5em 2em;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    border: .5px solid black;
+}
+
+.delete-btn:hover{
+    background-color: rgb(226, 34, 34);
+    color: white;
+    border: .5px solid rgb(226, 34, 34);
+}
+
+.edit-btn:hover{
+    background-color: var(--mydarkgrey);
+    color: white;
+    border: .5px solid var(--mydarkgrey);
+}
+
+

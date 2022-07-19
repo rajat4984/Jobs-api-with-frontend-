@@ -12,10 +12,8 @@ const authMiddleware = require("./middlewares/authentication");
 const express = require("express");
 const app = express();
 app.use(express.json());
+app.use(express.static("./public"));
 
-app.get("/", (req, res) => {
-  res.status(StatusCodes.OK).send("Jobs api");
-});
 app.use("/api/v1/jobs", authMiddleware, jobsRouter);
 app.use("/api/v1/auth", authRouter);
 app.use(notFoundMiddleware);

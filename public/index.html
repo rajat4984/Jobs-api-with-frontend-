@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="browser-app.js" defer></script>
+    <title>Jobs Store</title>
+  </head>
+  <body onload="getAllJobs()">
+    <nav>
+      <h1>Job-Library</h1>
+      <ul class="nav-links">
+        <li><a href="">API-DOCS</a></li>
+        <li>Rajat</li>
+      </ul>
+    </nav>
+
+    <section class="form-info">
+      <form action="/api/v1/jobs">
+        <div class="form-section">
+          <label for="company">Company</label> <br />
+          <input id="company-input" type="text" placeholder="Company name" />
+        </div>
+
+        <div class="form-section">
+          <label for="position">Position</label><br />
+          <input id="position-input" type="text" placeholder="Position name" />
+        </div>
+        <div class="form-section">
+          <label for="result">Result</label><br />
+          <select id="result-input" name="result">
+            <option value="pending">Pending</option>
+            <option value="interview">Interview</option>
+            <option value="declined">Declined</option>
+          </select>
+        </div>
+
+        <button  id="submit-input">Submit</button>
+      </form>
+    </section>
+
+    <section class="cards-container">
+    </section>
+  </body>
+</html>
