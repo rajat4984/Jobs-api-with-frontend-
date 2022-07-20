@@ -27,23 +27,6 @@ const createJob = async (event) => {
   positionInput.value = "";
   getAllJobs();
 };
-
-const deleteJob = (event) => {
-  console.log(event);
-  // const response = await fetch("/api/v1/jobs", {
-  //     method: "DELETE",
-
-  //     headers: {
-  //       "Content-type": "application/json; charset=UTF-8",
-  //       Authorization:
-  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ1NDAyNjEzZWIxZmFjMDQ5MGJmYjQiLCJuYW1lIjoicmFqYXQiLCJpYXQiOjE2NTgyMjc3NzMsImV4cCI6MTY2MDgxOTc3M30.MsrPZp0Pce9TXznQCv8c0wvoKJvrXyjrdbx-s-Tic_o",
-  //     },
-  //     parms:{
-
-  //     }
-  //   });
-};
-
 const getAllJobs = async () => {
   const response = await fetch("/api/v1/jobs", {
     method: "GET",
@@ -59,6 +42,7 @@ const getAllJobs = async () => {
 
   cardsContainer.innerHTML = "";
   jobsArray.forEach((job) => {
+    const { _id } = job;
     cardsContainer.innerHTML += `<div class="card">
       <div class="card-contents">
         <h3 class="company-name">${job.company}</h3>
@@ -66,13 +50,26 @@ const getAllJobs = async () => {
         <p>${job.status}</p>
       </div>
       <div class="card-btns">
-        <button class="delete-btn" onclick='deleteJob()'>Delete</button>
-        <button class="edit-btn">Edit</button>
+        <button class="delete-btn" id="${_id}" onclick = 'deleteJob(event)'>Delete</button>
+        <a target="_blank" href="update.html?id=${_id}"><button class="edit-btn" id="${_id}" onclick = 'updateJob(event)'>Edit </button></a>
       </div>
     </div>`;
   });
 };
 
+const deleteJob = (event) => {
+  const jobId = event.target.getAttribute("id");
+  fetch("/api/v1/jobs" + "/" + jobId, {
+    method: "DELETE",
+
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ1NDAyNjEzZWIxZmFjMDQ5MGJmYjQiLCJuYW1lIjoicmFqYXQiLCJpYXQiOjE2NTgyMjc3NzMsImV4cCI6MTY2MDgxOTc3M30.MsrPZp0Pce9TXznQCv8c0wvoKJvrXyjrdbx-s-Tic_o",
+    },
+  });
+  getAllJobs();
+};
 
 submitInput.addEventListener("click", createJob);
-// deleteBtn.addEventListener("click", deleteJob);
+

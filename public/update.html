@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="update-job.js" defer></script>
+    <title>Update-Job</title>
+  </head>
+  <body class="update-body">
+    <div class="update-container">
+      <h1 class="update-job-heading">Update-Job</h1>
+      <section class="update-form">
+        <form>
+          <div class="form-section">
+            <label for="company">Company</label> <br />
+            <input
+              id="update-company-input"
+              type="text"
+              placeholder="Company name"
+            />
+          </div>
+
+          <div class="form-section">
+            <label for="position">Position</label><br />
+            <input
+              id="update-position-input"
+              type="text"
+              placeholder="Position name"
+            />
+          </div>
+          <div class="form-section">
+            <label for="result">Result</label><br />
+            <select id="update-result-input" name="result">
+              <option value="pending">Pending</option>
+              <option value="interview">Interview</option>
+              <option value="declined">Declined</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <button id="submit-input" onclick="updateJob()">Save</button>
+            <button id="main-page">Go back</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

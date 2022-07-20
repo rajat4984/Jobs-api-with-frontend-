@@ -50,7 +50,8 @@ li > a {
 .form-info{
     display: flex;
     justify-content: flex-start;
-    margin: 2em 0 0 2em;
+    margin: 2em;
+    height: 300px;
 }
 
 input[type=text], select {
@@ -64,7 +65,7 @@ input[type=text], select {
     resize: vertical;
   }
 
-#submit-input{
+#submit-input,#main-page{
     outline: none;
     font-size: 1rem;
     padding: 2.5% 5.5%;
@@ -121,6 +122,23 @@ input[type=text], select {
     background-color: var(--mydarkgrey);
     color: white;
     border: .5px solid var(--mydarkgrey);
+}
+
+
+.update-container{
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%,-50%);
+
+}
+
+.update-body{
+  height: 100vh;
+}
+
+.update-job-heading{
+  margin-bottom: 1em;
 }
 
 
