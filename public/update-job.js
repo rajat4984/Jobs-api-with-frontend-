@@ -1,13 +1,11 @@
-const updateCompanyInput = document.querySelector("#update-company-input");
-const updatePositionInput = document.querySelector("#update-position-input");
-const updateResultInput = document.querySelector("#update-result-input");
+
 const submitInput = document.querySelector("#submit-input");
 const mainPagebtn = document.querySelector("#main-page");
 const params = new URLSearchParams(window.location.search);
 const id = new URLSearchParams(params).get("id");
 
-const updateJob = () => {
-  fetch("/api/v1/jobs" + "/" + id, {
+const updateJob = async() => {
+  await fetch("/api/v1/jobs" + "/" + id, {
     method: "PATCH",
 
     body: JSON.stringify({

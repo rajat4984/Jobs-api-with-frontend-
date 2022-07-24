@@ -65,7 +65,7 @@ input[type=text], select {
     resize: vertical;
   }
 
-#submit-input,#main-page{
+#submit-input,#main-page,#submit-button{
     outline: none;
     font-size: 1rem;
     padding: 2.5% 5.5%;
@@ -124,21 +124,26 @@ input[type=text], select {
     border: .5px solid var(--mydarkgrey);
 }
 
-
-.update-container{
-  position: absolute;
-  top: 50%;
-  left: 46%;
-  transform: translate(-50%,-50%);
-
-}
-
-.update-body{
+.overlay{
+  position: fixed;
+  width: 100%;
   height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
-.update-job-heading{
-  margin-bottom: 1em;
+.modal{
+  background-color: var(--mypink);
+  padding:1em 7em 1em 1em;
+  border-radius: 10px;
 }
+
+
+
 
 
